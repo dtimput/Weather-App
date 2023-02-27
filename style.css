@@ -24,6 +24,10 @@ form {
   font-weight: bold;
 }
 
+label {
+  color: white;
+}
+
 input {
   border-radius: 3px;
   border: 1px solid black;
