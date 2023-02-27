@@ -1,13 +1,11 @@
+// eslint-disable-next-line import/no-cycle
 import { location, temperature, feelsLike, wind, humidity } from "./domHandler";
 
-async function getWeatherData() {
+async function getWeatherData(apiLink) {
   try {
-    const response = await fetch(
-      "https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=36.250947&lon=-115.1700&appid=58445913d230f47d9c9cdbb2f0ccb615"
-    );
-    console.log(response);
+    const response = await fetch(apiLink);
     const data = await response.json();
-    console.log(data);
+    location.textContent = data.name;
     temperature.textContent = `${Math.round(data.main.temp)}°F`;
     feelsLike.textContent = `Feels like: ${Math.round(data.main.feels_like)}°F`;
     wind.textContent = `Wind: ${data.wind.speed} MPH`;
@@ -17,4 +15,14 @@ async function getWeatherData() {
   }
 }
 
-export default getWeatherData;
+function updateAPI(modifiedInput) {
+  const apiLink = `https://api.openweathermap.org/data/2.5/weather?units=imperial&q=${modifiedInput}&APPID=58445913d230f47d9c9cdbb2f0ccb615`;
+  getWeatherData(apiLink);
+}
+function handleUserInput(userInput) {
+  const input = userInput;
+  const modifiedInput = input.replace(/ /g, "%20");
+  updateAPI(modifiedInput);
+}
+
+export { getWeatherData, handleUserInput };
