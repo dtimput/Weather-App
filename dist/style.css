@@ -56,6 +56,7 @@ input {
 .weather-display {
   display: flex;
   align-items: center;
+  padding-top: 50px;
 }
 
 .temperature {
@@ -65,8 +66,17 @@ input {
 }
 
 .weather-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 50%;
   font-weight: bold;
   font-size: 24px;
   border-left: 2px solid black;
   padding-left: 45px;
+}
+
+.weather-details > p {
+  height: 50px;
+  flex-basis: 50%;
 }

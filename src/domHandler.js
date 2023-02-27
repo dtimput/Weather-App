@@ -6,6 +6,9 @@ const temperature = document.querySelector("#temperature");
 const feelsLike = document.querySelector("#feels-like");
 const wind = document.querySelector("#wind");
 const humidity = document.querySelector("#humidity");
+const description = document.querySelector("#description");
+const high = document.querySelector("#high");
+const low = document.querySelector("#low");
 const form = document.querySelector(".form");
 const searchBar = document.querySelector("#search");
 const error = document.querySelector(".error");
@@ -25,6 +28,9 @@ export {
   feelsLike,
   wind,
   humidity,
+  description,
+  high,
+  low,
   error,
   getUserInput,
 };
