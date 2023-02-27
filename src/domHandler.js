@@ -8,6 +8,7 @@ const wind = document.querySelector("#wind");
 const humidity = document.querySelector("#humidity");
 const form = document.querySelector(".form");
 const searchBar = document.querySelector("#search");
+const error = document.querySelector(".error");
 
 function getUserInput(event) {
   event.preventDefault();
@@ -18,4 +19,12 @@ function getUserInput(event) {
 
 form.addEventListener("submit", getUserInput);
 
-export { location, temperature, feelsLike, wind, humidity, getUserInput };
+export {
+  location,
+  temperature,
+  feelsLike,
+  wind,
+  humidity,
+  error,
+  getUserInput,
+};
