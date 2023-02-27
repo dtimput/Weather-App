@@ -8,8 +8,8 @@ async function getWeatherData() {
     console.log(response);
     const data = await response.json();
     console.log(data);
-    temperature.textContent = `${data.main.temp}°F`;
-    feelsLike.textContent = `Feels like: ${data.main.feels_like}°F`;
+    temperature.textContent = `${Math.round(data.main.temp)}°F`;
+    feelsLike.textContent = `Feels like: ${Math.round(data.main.feels_like)}°F`;
     wind.textContent = `Wind: ${data.wind.speed} MPH`;
     humidity.textContent = `Humidity: ${data.main.humidity}%`;
   } catch (err) {
